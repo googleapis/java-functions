@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service that application uses to manipulate triggers and functions.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/functions/v1/functions.proto")
@@ -565,10 +571,22 @@ public final class CloudFunctionsServiceGrpc {
     return CloudFunctionsServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that application uses to manipulate triggers and functions.
+   * </pre>
+   */
   public abstract static class CloudFunctionsServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of functions that belong to the requested project.
+     * </pre>
+     */
     public void listFunctions(
         com.google.cloud.functions.v1.ListFunctionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.ListFunctionsResponse>
@@ -576,35 +594,72 @@ public final class CloudFunctionsServiceGrpc {
       asyncUnimplementedUnaryCall(getListFunctionsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a function with the given name from the requested project.
+     * </pre>
+     */
     public void getFunction(
         com.google.cloud.functions.v1.GetFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.CloudFunction> responseObserver) {
       asyncUnimplementedUnaryCall(getGetFunctionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new function. If a function with the given name already exists in
+     * the specified project, the long running operation will return
+     * `ALREADY_EXISTS` error.
+     * </pre>
+     */
     public void createFunction(
         com.google.cloud.functions.v1.CreateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateFunctionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates existing function.
+     * </pre>
+     */
     public void updateFunction(
         com.google.cloud.functions.v1.UpdateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateFunctionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a function with the given name from the specified project. If the
+     * given function is used by some trigger, the trigger will be updated to
+     * remove this function.
+     * </pre>
+     */
     public void deleteFunction(
         com.google.cloud.functions.v1.DeleteFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteFunctionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Synchronously invokes a deployed Cloud Function. To be used for testing
+     * purposes as very limited traffic is allowed. For more information on
+     * the actual limits, refer to
+     * [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
+     * </pre>
+     */
     public void callFunction(
         com.google.cloud.functions.v1.CallFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.CallFunctionResponse>
@@ -612,7 +667,31 @@ public final class CloudFunctionsServiceGrpc {
       asyncUnimplementedUnaryCall(getCallFunctionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for uploading a function source code.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls.
+     * Once the function source code upload is complete, the used signed
+     * URL should be provided in CreateFunction or UpdateFunction request
+     * as a reference to the function source code.
+     * When uploading source code to the generated signed URL, please follow
+     * these restrictions:
+     * * Source file type should be a zip file.
+     * * Source file size should not exceed 100MB limit.
+     * * No credentials should be attached - the signed URLs provide access to the
+     *   target bucket using internal service identity; if credentials were
+     *   attached, the identity from the credentials would be used, but that
+     *   identity does not have permissions to upload files to the URL.
+     * When making a HTTP PUT request, these two headers need to be specified:
+     * * `content-type: application/zip`
+     * * `x-goog-content-length-range: 0,104857600`
+     * And this header SHOULD NOT be specified:
+     * * `Authorization: Bearer YOUR_TOKEN`
+     * </pre>
+     */
     public void generateUploadUrl(
         com.google.cloud.functions.v1.GenerateUploadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.GenerateUploadUrlResponse>
@@ -620,7 +699,17 @@ public final class CloudFunctionsServiceGrpc {
       asyncUnimplementedUnaryCall(getGenerateUploadUrlMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for downloading deployed function source code.
+     * The URL is only valid for a limited period and should be used within
+     * minutes after generation.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls
+     * </pre>
+     */
     public void generateDownloadUrl(
         com.google.cloud.functions.v1.GenerateDownloadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.GenerateDownloadUrlResponse>
@@ -628,21 +717,45 @@ public final class CloudFunctionsServiceGrpc {
       asyncUnimplementedUnaryCall(getGenerateDownloadUrlMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy on the specified function.
+     * Replaces any existing policy.
+     * </pre>
+     */
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a function.
+     * Returns an empty policy if the function exists and does not have a policy
+     * set.
+     * </pre>
+     */
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Tests the specified permissions against the IAM access control policy
+     * for a function.
+     * If the function does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
+     * </pre>
+     */
     public void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
@@ -728,7 +841,13 @@ public final class CloudFunctionsServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that application uses to manipulate triggers and functions.
+   * </pre>
+   */
   public static final class CloudFunctionsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<CloudFunctionsServiceStub> {
     private CloudFunctionsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -741,7 +860,13 @@ public final class CloudFunctionsServiceGrpc {
       return new CloudFunctionsServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of functions that belong to the requested project.
+     * </pre>
+     */
     public void listFunctions(
         com.google.cloud.functions.v1.ListFunctionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.ListFunctionsResponse>
@@ -752,7 +877,13 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a function with the given name from the requested project.
+     * </pre>
+     */
     public void getFunction(
         com.google.cloud.functions.v1.GetFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.CloudFunction> responseObserver) {
@@ -762,7 +893,15 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new function. If a function with the given name already exists in
+     * the specified project, the long running operation will return
+     * `ALREADY_EXISTS` error.
+     * </pre>
+     */
     public void createFunction(
         com.google.cloud.functions.v1.CreateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -772,7 +911,13 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates existing function.
+     * </pre>
+     */
     public void updateFunction(
         com.google.cloud.functions.v1.UpdateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -782,7 +927,15 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a function with the given name from the specified project. If the
+     * given function is used by some trigger, the trigger will be updated to
+     * remove this function.
+     * </pre>
+     */
     public void deleteFunction(
         com.google.cloud.functions.v1.DeleteFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -792,7 +945,16 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Synchronously invokes a deployed Cloud Function. To be used for testing
+     * purposes as very limited traffic is allowed. For more information on
+     * the actual limits, refer to
+     * [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
+     * </pre>
+     */
     public void callFunction(
         com.google.cloud.functions.v1.CallFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.CallFunctionResponse>
@@ -803,7 +965,31 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for uploading a function source code.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls.
+     * Once the function source code upload is complete, the used signed
+     * URL should be provided in CreateFunction or UpdateFunction request
+     * as a reference to the function source code.
+     * When uploading source code to the generated signed URL, please follow
+     * these restrictions:
+     * * Source file type should be a zip file.
+     * * Source file size should not exceed 100MB limit.
+     * * No credentials should be attached - the signed URLs provide access to the
+     *   target bucket using internal service identity; if credentials were
+     *   attached, the identity from the credentials would be used, but that
+     *   identity does not have permissions to upload files to the URL.
+     * When making a HTTP PUT request, these two headers need to be specified:
+     * * `content-type: application/zip`
+     * * `x-goog-content-length-range: 0,104857600`
+     * And this header SHOULD NOT be specified:
+     * * `Authorization: Bearer YOUR_TOKEN`
+     * </pre>
+     */
     public void generateUploadUrl(
         com.google.cloud.functions.v1.GenerateUploadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.GenerateUploadUrlResponse>
@@ -814,7 +1000,17 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for downloading deployed function source code.
+     * The URL is only valid for a limited period and should be used within
+     * minutes after generation.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls
+     * </pre>
+     */
     public void generateDownloadUrl(
         com.google.cloud.functions.v1.GenerateDownloadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.GenerateDownloadUrlResponse>
@@ -825,7 +1021,14 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy on the specified function.
+     * Replaces any existing policy.
+     * </pre>
+     */
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -835,7 +1038,15 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a function.
+     * Returns an empty policy if the function exists and does not have a policy
+     * set.
+     * </pre>
+     */
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -845,7 +1056,16 @@ public final class CloudFunctionsServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Tests the specified permissions against the IAM access control policy
+     * for a function.
+     * If the function does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
+     * </pre>
+     */
     public void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
@@ -857,7 +1077,13 @@ public final class CloudFunctionsServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that application uses to manipulate triggers and functions.
+   * </pre>
+   */
   public static final class CloudFunctionsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CloudFunctionsServiceBlockingStub> {
     private CloudFunctionsServiceBlockingStub(
@@ -871,67 +1097,168 @@ public final class CloudFunctionsServiceGrpc {
       return new CloudFunctionsServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of functions that belong to the requested project.
+     * </pre>
+     */
     public com.google.cloud.functions.v1.ListFunctionsResponse listFunctions(
         com.google.cloud.functions.v1.ListFunctionsRequest request) {
       return blockingUnaryCall(getChannel(), getListFunctionsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a function with the given name from the requested project.
+     * </pre>
+     */
     public com.google.cloud.functions.v1.CloudFunction getFunction(
         com.google.cloud.functions.v1.GetFunctionRequest request) {
       return blockingUnaryCall(getChannel(), getGetFunctionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new function. If a function with the given name already exists in
+     * the specified project, the long running operation will return
+     * `ALREADY_EXISTS` error.
+     * </pre>
+     */
     public com.google.longrunning.Operation createFunction(
         com.google.cloud.functions.v1.CreateFunctionRequest request) {
       return blockingUnaryCall(getChannel(), getCreateFunctionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates existing function.
+     * </pre>
+     */
     public com.google.longrunning.Operation updateFunction(
         com.google.cloud.functions.v1.UpdateFunctionRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateFunctionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a function with the given name from the specified project. If the
+     * given function is used by some trigger, the trigger will be updated to
+     * remove this function.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteFunction(
         com.google.cloud.functions.v1.DeleteFunctionRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteFunctionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Synchronously invokes a deployed Cloud Function. To be used for testing
+     * purposes as very limited traffic is allowed. For more information on
+     * the actual limits, refer to
+     * [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
+     * </pre>
+     */
     public com.google.cloud.functions.v1.CallFunctionResponse callFunction(
         com.google.cloud.functions.v1.CallFunctionRequest request) {
       return blockingUnaryCall(getChannel(), getCallFunctionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for uploading a function source code.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls.
+     * Once the function source code upload is complete, the used signed
+     * URL should be provided in CreateFunction or UpdateFunction request
+     * as a reference to the function source code.
+     * When uploading source code to the generated signed URL, please follow
+     * these restrictions:
+     * * Source file type should be a zip file.
+     * * Source file size should not exceed 100MB limit.
+     * * No credentials should be attached - the signed URLs provide access to the
+     *   target bucket using internal service identity; if credentials were
+     *   attached, the identity from the credentials would be used, but that
+     *   identity does not have permissions to upload files to the URL.
+     * When making a HTTP PUT request, these two headers need to be specified:
+     * * `content-type: application/zip`
+     * * `x-goog-content-length-range: 0,104857600`
+     * And this header SHOULD NOT be specified:
+     * * `Authorization: Bearer YOUR_TOKEN`
+     * </pre>
+     */
     public com.google.cloud.functions.v1.GenerateUploadUrlResponse generateUploadUrl(
         com.google.cloud.functions.v1.GenerateUploadUrlRequest request) {
       return blockingUnaryCall(
           getChannel(), getGenerateUploadUrlMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for downloading deployed function source code.
+     * The URL is only valid for a limited period and should be used within
+     * minutes after generation.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls
+     * </pre>
+     */
     public com.google.cloud.functions.v1.GenerateDownloadUrlResponse generateDownloadUrl(
         com.google.cloud.functions.v1.GenerateDownloadUrlRequest request) {
       return blockingUnaryCall(
           getChannel(), getGenerateDownloadUrlMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy on the specified function.
+     * Replaces any existing policy.
+     * </pre>
+     */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a function.
+     * Returns an empty policy if the function exists and does not have a policy
+     * set.
+     * </pre>
+     */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Tests the specified permissions against the IAM access control policy
+     * for a function.
+     * If the function does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
+     * </pre>
+     */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return blockingUnaryCall(
@@ -939,7 +1266,13 @@ public final class CloudFunctionsServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that application uses to manipulate triggers and functions.
+   * </pre>
+   */
   public static final class CloudFunctionsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<CloudFunctionsServiceFutureStub> {
     private CloudFunctionsServiceFutureStub(
@@ -953,7 +1286,13 @@ public final class CloudFunctionsServiceGrpc {
       return new CloudFunctionsServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of functions that belong to the requested project.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.functions.v1.ListFunctionsResponse>
         listFunctions(com.google.cloud.functions.v1.ListFunctionsRequest request) {
@@ -961,7 +1300,13 @@ public final class CloudFunctionsServiceGrpc {
           getChannel().newCall(getListFunctionsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a function with the given name from the requested project.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.functions.v1.CloudFunction>
         getFunction(com.google.cloud.functions.v1.GetFunctionRequest request) {
@@ -969,28 +1314,59 @@ public final class CloudFunctionsServiceGrpc {
           getChannel().newCall(getGetFunctionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new function. If a function with the given name already exists in
+     * the specified project, the long running operation will return
+     * `ALREADY_EXISTS` error.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createFunction(com.google.cloud.functions.v1.CreateFunctionRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateFunctionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates existing function.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateFunction(com.google.cloud.functions.v1.UpdateFunctionRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateFunctionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a function with the given name from the specified project. If the
+     * given function is used by some trigger, the trigger will be updated to
+     * remove this function.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteFunction(com.google.cloud.functions.v1.DeleteFunctionRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteFunctionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Synchronously invokes a deployed Cloud Function. To be used for testing
+     * purposes as very limited traffic is allowed. For more information on
+     * the actual limits, refer to
+     * [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.functions.v1.CallFunctionResponse>
         callFunction(com.google.cloud.functions.v1.CallFunctionRequest request) {
@@ -998,7 +1374,31 @@ public final class CloudFunctionsServiceGrpc {
           getChannel().newCall(getCallFunctionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for uploading a function source code.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls.
+     * Once the function source code upload is complete, the used signed
+     * URL should be provided in CreateFunction or UpdateFunction request
+     * as a reference to the function source code.
+     * When uploading source code to the generated signed URL, please follow
+     * these restrictions:
+     * * Source file type should be a zip file.
+     * * Source file size should not exceed 100MB limit.
+     * * No credentials should be attached - the signed URLs provide access to the
+     *   target bucket using internal service identity; if credentials were
+     *   attached, the identity from the credentials would be used, but that
+     *   identity does not have permissions to upload files to the URL.
+     * When making a HTTP PUT request, these two headers need to be specified:
+     * * `content-type: application/zip`
+     * * `x-goog-content-length-range: 0,104857600`
+     * And this header SHOULD NOT be specified:
+     * * `Authorization: Bearer YOUR_TOKEN`
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.functions.v1.GenerateUploadUrlResponse>
         generateUploadUrl(com.google.cloud.functions.v1.GenerateUploadUrlRequest request) {
@@ -1006,7 +1406,17 @@ public final class CloudFunctionsServiceGrpc {
           getChannel().newCall(getGenerateUploadUrlMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for downloading deployed function source code.
+     * The URL is only valid for a limited period and should be used within
+     * minutes after generation.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.functions.v1.GenerateDownloadUrlResponse>
         generateDownloadUrl(com.google.cloud.functions.v1.GenerateDownloadUrlRequest request) {
@@ -1014,21 +1424,45 @@ public final class CloudFunctionsServiceGrpc {
           getChannel().newCall(getGenerateDownloadUrlMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy on the specified function.
+     * Replaces any existing policy.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a function.
+     * Returns an empty policy if the function exists and does not have a policy
+     * set.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Tests the specified permissions against the IAM access control policy
+     * for a function.
+     * If the function does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
