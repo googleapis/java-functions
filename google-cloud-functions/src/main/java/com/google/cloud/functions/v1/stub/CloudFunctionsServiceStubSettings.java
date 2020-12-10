@@ -71,7 +71,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -171,7 +170,7 @@ public class CloudFunctionsServiceStubSettings
 
             @Override
             public Iterable<CloudFunction> extractResources(ListFunctionsResponse payload) {
-              return Objects.isNull(payload.getFunctionsList())
+              return payload.getFunctionsList() == null
                   ? ImmutableList.<CloudFunction>of()
                   : payload.getFunctionsList();
             }

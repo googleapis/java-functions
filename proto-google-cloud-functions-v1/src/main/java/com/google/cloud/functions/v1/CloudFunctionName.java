@@ -104,7 +104,7 @@ public class CloudFunctionName implements ResourceName {
   public static List<String> toStringList(List<CloudFunctionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CloudFunctionName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -119,17 +119,17 @@ public class CloudFunctionName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(location)) {
+          if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (!Objects.isNull(function)) {
+          if (function != null) {
             fieldMapBuilder.put("function", function);
           }
           fieldValuesMap = fieldMapBuilder.build();
