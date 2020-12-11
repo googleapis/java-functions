@@ -220,11 +220,21 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
         CloudFunctionsServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcCloudFunctionsServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcCloudFunctionsServiceStub(
       CloudFunctionsServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcCloudFunctionsServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcCloudFunctionsServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcCloudFunctionsServiceStub(
       CloudFunctionsServiceStubSettings settings,
       ClientContext clientContext,
