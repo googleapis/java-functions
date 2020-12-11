@@ -110,7 +110,7 @@ public class CloudFunctionsServiceClientTest {
         ListFunctionsRequest.newBuilder()
             .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setPageSize(883849137)
-            .setPageToken("page_token1630607433")
+            .setPageToken("pageToken873572522")
             .build();
 
     ListFunctionsPagedResponse pagedListResponse = client.listFunctions(request);
@@ -143,7 +143,7 @@ public class CloudFunctionsServiceClientTest {
           ListFunctionsRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
-              .setPageToken("page_token1630607433")
+              .setPageToken("pageToken873572522")
               .build();
       client.listFunctions(request);
       Assert.fail("No exception raised");
@@ -158,19 +158,19 @@ public class CloudFunctionsServiceClientTest {
         CloudFunction.newBuilder()
             .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
             .setDescription("description-1724546052")
-            .setEntryPoint("entry_point-799136893")
+            .setEntryPoint("entryPoint-1979329474")
             .setRuntime("runtime1550962648")
             .setTimeout(Duration.newBuilder().build())
             .setAvailableMemoryMb(1964533661)
-            .setServiceAccountEmail("service_account_email-1300473088")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionId(-670497310)
             .putAllLabels(new HashMap<String, String>())
             .putAllEnvironmentVariables(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setMaxInstances(-330682013)
-            .setVpcConnector("vpc_connector1732864119")
-            .setBuildId("build_id-1430655860")
+            .setVpcConnector("vpcConnector2101559652")
+            .setBuildId("buildId230943785")
             .build();
     mockCloudFunctionsService.addResponse(expectedResponse);
 
@@ -210,19 +210,19 @@ public class CloudFunctionsServiceClientTest {
         CloudFunction.newBuilder()
             .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
             .setDescription("description-1724546052")
-            .setEntryPoint("entry_point-799136893")
+            .setEntryPoint("entryPoint-1979329474")
             .setRuntime("runtime1550962648")
             .setTimeout(Duration.newBuilder().build())
             .setAvailableMemoryMb(1964533661)
-            .setServiceAccountEmail("service_account_email-1300473088")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionId(-670497310)
             .putAllLabels(new HashMap<String, String>())
             .putAllEnvironmentVariables(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setMaxInstances(-330682013)
-            .setVpcConnector("vpc_connector1732864119")
-            .setBuildId("build_id-1430655860")
+            .setVpcConnector("vpcConnector2101559652")
+            .setBuildId("buildId230943785")
             .build();
     mockCloudFunctionsService.addResponse(expectedResponse);
 
@@ -262,19 +262,19 @@ public class CloudFunctionsServiceClientTest {
         CloudFunction.newBuilder()
             .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
             .setDescription("description-1724546052")
-            .setEntryPoint("entry_point-799136893")
+            .setEntryPoint("entryPoint-1979329474")
             .setRuntime("runtime1550962648")
             .setTimeout(Duration.newBuilder().build())
             .setAvailableMemoryMb(1964533661)
-            .setServiceAccountEmail("service_account_email-1300473088")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionId(-670497310)
             .putAllLabels(new HashMap<String, String>())
             .putAllEnvironmentVariables(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setMaxInstances(-330682013)
-            .setVpcConnector("vpc_connector1732864119")
-            .setBuildId("build_id-1430655860")
+            .setVpcConnector("vpcConnector2101559652")
+            .setBuildId("buildId230943785")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -325,19 +325,19 @@ public class CloudFunctionsServiceClientTest {
         CloudFunction.newBuilder()
             .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
             .setDescription("description-1724546052")
-            .setEntryPoint("entry_point-799136893")
+            .setEntryPoint("entryPoint-1979329474")
             .setRuntime("runtime1550962648")
             .setTimeout(Duration.newBuilder().build())
             .setAvailableMemoryMb(1964533661)
-            .setServiceAccountEmail("service_account_email-1300473088")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionId(-670497310)
             .putAllLabels(new HashMap<String, String>())
             .putAllEnvironmentVariables(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setMaxInstances(-330682013)
-            .setVpcConnector("vpc_connector1732864119")
-            .setBuildId("build_id-1430655860")
+            .setVpcConnector("vpcConnector2101559652")
+            .setBuildId("buildId230943785")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -388,19 +388,19 @@ public class CloudFunctionsServiceClientTest {
         CloudFunction.newBuilder()
             .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
             .setDescription("description-1724546052")
-            .setEntryPoint("entry_point-799136893")
+            .setEntryPoint("entryPoint-1979329474")
             .setRuntime("runtime1550962648")
             .setTimeout(Duration.newBuilder().build())
             .setAvailableMemoryMb(1964533661)
-            .setServiceAccountEmail("service_account_email-1300473088")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionId(-670497310)
             .putAllLabels(new HashMap<String, String>())
             .putAllEnvironmentVariables(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setMaxInstances(-330682013)
-            .setVpcConnector("vpc_connector1732864119")
-            .setBuildId("build_id-1430655860")
+            .setVpcConnector("vpcConnector2101559652")
+            .setBuildId("buildId230943785")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -530,7 +530,7 @@ public class CloudFunctionsServiceClientTest {
   public void callFunctionTest() throws Exception {
     CallFunctionResponse expectedResponse =
         CallFunctionResponse.newBuilder()
-            .setExecutionId("execution_id-1217171550")
+            .setExecutionId("executionId-454906285")
             .setResult("result-934426595")
             .setError("error96784904")
             .build();
@@ -573,7 +573,7 @@ public class CloudFunctionsServiceClientTest {
   public void callFunctionTest2() throws Exception {
     CallFunctionResponse expectedResponse =
         CallFunctionResponse.newBuilder()
-            .setExecutionId("execution_id-1217171550")
+            .setExecutionId("executionId-454906285")
             .setResult("result-934426595")
             .setError("error96784904")
             .build();
@@ -615,7 +615,7 @@ public class CloudFunctionsServiceClientTest {
   @Test
   public void generateUploadUrlTest() throws Exception {
     GenerateUploadUrlResponse expectedResponse =
-        GenerateUploadUrlResponse.newBuilder().setUploadUrl("upload_url-242738639").build();
+        GenerateUploadUrlResponse.newBuilder().setUploadUrl("uploadUrl1239085998").build();
     mockCloudFunctionsService.addResponse(expectedResponse);
 
     GenerateUploadUrlRequest request =
@@ -653,7 +653,7 @@ public class CloudFunctionsServiceClientTest {
   @Test
   public void generateDownloadUrlTest() throws Exception {
     GenerateDownloadUrlResponse expectedResponse =
-        GenerateDownloadUrlResponse.newBuilder().setDownloadUrl("download_url1109408056").build();
+        GenerateDownloadUrlResponse.newBuilder().setDownloadUrl("downloadUrl-1211148345").build();
     mockCloudFunctionsService.addResponse(expectedResponse);
 
     GenerateDownloadUrlRequest request =
