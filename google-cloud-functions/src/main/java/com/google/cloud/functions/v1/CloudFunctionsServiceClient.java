@@ -41,7 +41,6 @@ import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -207,9 +206,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    */
   public final CloudFunction getFunction(CloudFunctionName name) {
     GetFunctionRequest request =
-        GetFunctionRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetFunctionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFunction(request);
   }
 
@@ -260,7 +257,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
       LocationName location, CloudFunction function) {
     CreateFunctionRequest request =
         CreateFunctionRequest.newBuilder()
-            .setLocation(Objects.isNull(location) ? null : location.toString())
+            .setLocation(location == null ? null : location.toString())
             .setFunction(function)
             .build();
     return createFunctionAsync(request);
@@ -377,9 +374,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   public final OperationFuture<Empty, OperationMetadataV1> deleteFunctionAsync(
       CloudFunctionName name) {
     DeleteFunctionRequest request =
-        DeleteFunctionRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteFunctionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFunctionAsync(request);
   }
 
@@ -445,7 +440,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   public final CallFunctionResponse callFunction(CloudFunctionName name, String data) {
     CallFunctionRequest request =
         CallFunctionRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setData(data)
             .build();
     return callFunction(request);
