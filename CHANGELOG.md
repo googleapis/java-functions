@@ -1,5 +1,26 @@
 # Changelog
 
+### [2.0.3](https://www.github.com/googleapis/java-functions/compare/v2.0.2...v2.0.3) (2021-08-25)
+
+
+### Documentation
+
+* minor formatting fixes to Cloud Functions reference docs ([#272](https://www.github.com/googleapis/java-functions/issues/272)) ([4ffb50d](https://www.github.com/googleapis/java-functions/commit/4ffb50da1877ccf8cc7b4ff321dd3850e2c16d73))
+
+### [2.0.2](https://www.github.com/googleapis/java-functions/compare/v2.0.1...v2.0.2) (2021-08-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#275](https://www.github.com/googleapis/java-functions/issues/275)) ([b34df73](https://www.github.com/googleapis/java-functions/commit/b34df730c7beae488dfb86bcf94d20b48fd08e1a))
+
+### [2.0.1](https://www.github.com/googleapis/java-functions/compare/v2.0.0...v2.0.1) (2021-08-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#268](https://www.github.com/googleapis/java-functions/issues/268)) ([9365fed](https://www.github.com/googleapis/java-functions/commit/9365fedd090b2f1ef7721ddff5e4a3072963afbf))
+
 ## [2.0.0](https://www.github.com/googleapis/java-functions/compare/v1.2.2...v2.0.0) (2021-08-10)
 
 
