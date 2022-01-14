@@ -19,9 +19,8 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-functions</artifactId>
-  <version>2.3.0</version>
+  <version>2.3.1</version>
 </dependency>
-
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
@@ -170,7 +169,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-functions/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-functions/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-functions/java11.html
-[stability-image]: https://img.shields.io/badge/stability-ga-green
+[stability-image]: https://img.shields.io/badge/stability-unknown-red
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-functions.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-functions&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
