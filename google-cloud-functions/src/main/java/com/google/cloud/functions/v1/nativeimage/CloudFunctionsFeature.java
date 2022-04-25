@@ -72,11 +72,16 @@ final class CloudFunctionsFeature implements Feature {
       ResourcesRegistry resourcesRegistry = ImageSingletons.lookup(ResourcesRegistry.class);
       resourcesRegistry.addResources(
           "\\QMETA-INF/services/org.eclipse.jetty.http.HttpFieldPreEncoder\\E");
-      resourcesRegistry.addResources(ConfigurationCondition.alwaysTrue(),"\\Qorg/eclipse/jetty/http/encoding.properties\\E");
-      resourcesRegistry.addResources(ConfigurationCondition.alwaysTrue(),"\\Qorg/eclipse/jetty/http/mime.properties\\E");
-      resourcesRegistry.addResources(ConfigurationCondition.alwaysTrue(),"\\Qorg/eclipse/jetty/version/build.properties\\E");
-      resourcesRegistry.addResourceBundles(ConfigurationCondition.alwaysTrue(),"javax.servlet.LocalStrings");
-      resourcesRegistry.addResourceBundles(ConfigurationCondition.alwaysTrue(),"javax.servlet.http.LocalStrings");
+      resourcesRegistry.addResources(
+          ConfigurationCondition.alwaysTrue(), "\\Qorg/eclipse/jetty/http/encoding.properties\\E");
+      resourcesRegistry.addResources(
+          ConfigurationCondition.alwaysTrue(), "\\Qorg/eclipse/jetty/http/mime.properties\\E");
+      resourcesRegistry.addResources(
+          ConfigurationCondition.alwaysTrue(), "\\Qorg/eclipse/jetty/version/build.properties\\E");
+      resourcesRegistry.addResourceBundles(
+          ConfigurationCondition.alwaysTrue(), "javax.servlet.LocalStrings");
+      resourcesRegistry.addResourceBundles(
+          ConfigurationCondition.alwaysTrue(), "javax.servlet.http.LocalStrings");
 
       // Register user-implemented Function classes
       List<Class<?>> functionClasses =
