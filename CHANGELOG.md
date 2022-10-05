@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.4](https://github.com/googleapis/java-functions/compare/v2.5.3...v2.5.4) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([594ed65](https://github.com/googleapis/java-functions/commit/594ed65be45e827c0046808d462c961728a6ebc0))
+
 ## [2.5.3](https://github.com/googleapis/java-functions/compare/v2.5.2...v2.5.3) (2022-10-03)
 
 
